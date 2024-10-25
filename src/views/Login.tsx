@@ -9,6 +9,10 @@ const Login = () => {
     password: Yup.string().min(4, 'Mínimo 4 caracteres').required('Requerido'),
   });
 
+  const irRegsiter = () => {
+    navigate('/register')
+  }
+
   return (
     <div className="flex justify-center items-center h-screen bg-gray-900">
       <div className="w-full max-w-md bg-gray-800 p-8 rounded-lg">
@@ -43,7 +47,7 @@ const Login = () => {
                 {errors.password && touched.password ? <div className="text-red-500">{errors.password}</div> : null}
               </div>
               <button type="submit" className="w-full p-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Entrar</button>
-              <button type="submit" className="w-full p-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Regsitrar</button>
+              <button onClick={ irRegsiter } className="w-full p-2 bg-blue-500 hover:bg-blue-600 text-white rounded">Regsitrar</button>
             </Form>
           )}
         </Formik>
